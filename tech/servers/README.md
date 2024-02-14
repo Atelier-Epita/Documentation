@@ -12,16 +12,17 @@ par ce router.
 
 Pour l'instant, 2 noeuds sont configurées:
 - cpt-03
-- cpt-04
+- cpt-05
+
+Le noeud `cpt-04` (qui est vraiment pete) semble
+avoir des problemes de reseau consequents, et n'est
+donc pas pour le moment dans le cluster.
 
 les IPs pour ces machines sont
 10.69.1.1x
 Où x est le numero de la machine
 
 *e.g.: cpt-03 -> 10.69.1.13*
-
-*N.B.: le noeud cpt-03 possede egalement l'addresse
-`10.69.1.10`*
 
 Les serveurs ne fonctionnant pas en UEFI,
 une version de debian 12 avec un grub BIOS est installé
@@ -32,9 +33,9 @@ sur les machines, avec proxmox par dessus.
 
 Pour accéder à l'interface de proxmox, celle-ci
 est disponible derrière un `nginx`, sur le noeud `cpt-03` et
-bind a l'addresse IP `10.69.1.10`.
+bind a l'addresse IP `10.69.1.13`.
 Le proxy proxmox du cluster est disponible a l'addresse
 (https://pve.dc-01.le-maker.fr/)
 et chaque noeud expose son proxy proxmox sur le subdomain
 `https://<nom-du-noeud>.pve.dc-01.le-maker.fr/`
-e.g.: [cpt-04](https://cpt-04.pve.dc-01.le-maker.fr)
+e.g.: [cpt-05](https://cpt-05.pve.dc-01.le-maker.fr)
