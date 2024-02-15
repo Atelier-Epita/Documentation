@@ -39,3 +39,11 @@ Le proxy proxmox du cluster est disponible a l'addresse
 et chaque noeud expose son proxy proxmox sur le subdomain
 `https://<nom-du-noeud>.pve.dc-01.le-maker.fr/`
 e.g.: [cpt-05](https://cpt-05.pve.dc-01.le-maker.fr)
+
+### Configuration virtualisation
+
+Du a un bug de proxmox sur les serveurs HP (machines
+utilisees dans la baie pour l'instant), il faut activer
+un kernel module en plus pour activer la fonctionnalite
+`iommu` sur la machine.
+(https://github.com/brunokc/pve-kernel-builder#configuration)
