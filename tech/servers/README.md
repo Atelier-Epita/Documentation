@@ -10,9 +10,11 @@ par ce router.
 
 ## Machines
 
-Pour l'instant, 2 noeuds sont configurées:
+Pour l'instant, 4 noeuds sont configurées:
 - cpt-03
 - cpt-05
+- cpt-06
+- cpt-07
 
 Le noeud `cpt-04` (qui est vraiment pete) semble
 avoir des problemes de reseau consequents, et n'est
@@ -47,3 +49,17 @@ utilisees dans la baie pour l'instant), il faut activer
 un kernel module en plus pour activer la fonctionnalite
 `iommu` sur la machine.
 (https://github.com/brunokc/pve-kernel-builder#configuration)
+
+## Machines virtuelles
+
+Pour l'instant, un router est configuré sur une VM avec wireguard dessus
+qui permet de forward et de recevoir le trafic depuis la [vm AWS](gateway.infra.atelier-maker.fr).
+
+### Issues
+
+Pour l'instant, pour que la connection entre le router dans la baie et l'instance
+AWS soit correctement maintenue, un *cronjob* avec un *ping* du router
+vers l'instance tourne toutes les minutes.
+
+**Il ne faut pas desactiver ce cronjob avant d'avoir trouvé une vraie solution
+viable.**
