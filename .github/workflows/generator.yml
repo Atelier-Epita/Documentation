@@ -15,7 +15,7 @@ jobs:
       - name: Install pandoc
         run:
           sudo apt-get install pandoc && 
-          sudo apt-get install texlive-latex-base
+          sudo apt-get install texlive-latex-recommended
       - name: Convert to PDF
         run: ./.build/generate_tutoriels.sh
       - name: Upload out/ folder
