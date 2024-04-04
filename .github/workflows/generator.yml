@@ -2,7 +2,7 @@ name: Markdown to PDF
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   release:
     types: [created]
   workflow_dispatch:
@@ -15,7 +15,7 @@ jobs:
       - name: Install pandoc
         run: sudo apt-get install pandoc
       - name: Convert to PDF
-        run: ./build/generate_tutoriels.sh
+        run: ./.build/generate_tutoriels.sh
       - name: Upload out/ folder
         uses: actions/upload-artifact@v2
         with:
