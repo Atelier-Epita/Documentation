@@ -4,6 +4,7 @@
    1. [Servers](tech/servers)
 2. [Tutoriels](tutoriels)
    1. [Impression 3d](tutoriels/impression_3d_fdm.md)
+   2. [CNC](tutoriels/cnc.md)
 3. [Fiches Machines](fiches-machines)
    1. [decapeur thermique](fiches-machines/decapeur_thermique.md)
    2. [defonceuse](fiches-machines/defonceuse.md)
@@ -19,3 +20,10 @@
    12. [scie sauteuse](fiches-machines/scie_sauteuse.md)
    13. [Tronxy X5SA](fiches-machines/tronxy_X5SA.md)
    14. [Wanhao D12](fiches-machines/wanhao-d12.md)
+
+## Generating pdf using pandoc
+
+generating pdf for the tutorials:
+```bash
+./.build/generate_tutoriels.sh
+```
