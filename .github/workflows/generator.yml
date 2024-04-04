@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install pandoc
-        run: sudo apt-get install pandoc
+        run:
+          sudo apt-get install pandoc && 
+          sudo apt-get install texlive-latex-base
       - name: Convert to PDF
         run: ./.build/generate_tutoriels.sh
       - name: Upload out/ folder
