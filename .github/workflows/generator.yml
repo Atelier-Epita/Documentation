@@ -11,7 +11,7 @@ jobs:
   build-tutoriels:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install pandoc
         run:
           sudo apt-get install pandoc && 
@@ -19,7 +19,7 @@ jobs:
       - name: Convert to PDF
         run: ./.build/generate_tutoriels.sh
       - name: Upload out/ folder
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: tutoriels
           path: out/

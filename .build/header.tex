@@ -1,0 +1,46 @@
+\usepackage{geometry}
+\usepackage{titlesec}
+
+\definecolor{main}{RGB}{0, 0, 0}
+\definecolor{highlight}{RGB}{255, 80, 0}
+\definecolor{sechighlight}{RGB}{200, 150, 0}
+\definecolor{bgcolor}{RGB}{230, 230, 230}
+
+% reduce margin size
+\geometry{margin=2cm}
+
+% Text highlight color (backtick)
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{%
+    \colorbox{bgcolor}{\color{highlight}\oldtexttt{#1}}
+}
+
+% Sections title color
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{sechighlight}}
+    {\thesection}{1em}{}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\color{sechighlight}}
+    {\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+    {\normalfont\large\bfseries\color{sechighlight}}
+    {\thesubsection}{1em}{}
+
+% IncludeGraphics background color, center
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+    \begin{center}
+        \colorbox{bgcolor}{\oldincludegraphics[#1]{#2}}
+    \end{center}
+}
+
+% Code background color
+\let\oldverbatim\verbatim
+\renewcommand{\verbatim}{\colorbox{bgcolor}\oldverbatim}
+
+% Hypertext color and underline
+\hypersetup{colorlinks=true, linkcolor=highlight, urlcolor=highlight}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\underline{\color{highlight}#2}}}

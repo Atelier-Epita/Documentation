@@ -53,10 +53,9 @@ Une fois sélectionnée, parametrez votre usinage avec le pannel de droite, puis
 On a ici un exemple de l'utilisation de `2d contour` avec l'option `Multiple Depths` (menu `Passes`) pour découper une pièce en plusieurs passes. Ainsi que l'option `Ramp` (menu `Linking`) pour éviter de "plonger" directement dans la matière. Cela permet de réduire l'usure de la fraise et les nuisances sonores. On peut ici apercevoir 6 depths de 2mm chacun (en bleu) et la `ramp` (en rouge).
 Des `tabs` ont été ajoutés pour éviter que la pièce ne se détache de la matière lors de la découpe. Cette option peut être trouver dans le menu `Geometry` de l'usinage.
 
-
-![Tabs](resources/cnc-tabs.png)
-![Ramp](resources/cnc-ramp.png)
 ![Multi passes](resources/cnc-multiplepasses.png)
+![Ramp](resources/cnc-ramp.png)
+![Tabs](resources/cnc-tabs.png)
 
 ## Exportation du G-Code
 
