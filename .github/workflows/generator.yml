@@ -18,9 +18,8 @@ jobs:
           sudo apt-get install texlive-latex-recommended
       - name: Convert to PDF
         run: ./.build/generate_tutoriels.sh
-      - name: Upload out/ folder
-        uses: actions/upload-artifact@v4
+      - name: Create Release
+        uses: ncipollo/release-action@v1.14.0
         with:
-          name: tutoriels
-          path: out/
-
+          artifacts: out/*
+          makeLatest: true
