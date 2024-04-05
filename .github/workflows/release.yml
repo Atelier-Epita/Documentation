@@ -12,7 +12,8 @@ jobs:
       - name: Install pandoc
         run:
           sudo apt-get install pandoc && 
-          sudo apt-get install texlive-latex-recommended
+          sudo apt-get install texlive-latex-recommended && 
+          sudo apt install texlive-formats-extra
       - name: Convert to PDF
         run: ./.build/generate_tutoriels.sh
       - name: Create Release
@@ -20,5 +21,5 @@ jobs:
         with:
           artifacts: out/*
           tag: ${{ github.run_number }}
-          name: Tutoriels
+          name: Tutoriels - ${{ github.run_number }}
           makeLatest: true
