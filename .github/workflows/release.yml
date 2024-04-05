@@ -1,8 +1,8 @@
 name: Markdown to PDF and Release
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [master]
 
 jobs:
   build-tutoriels:
@@ -19,4 +19,6 @@ jobs:
         uses: ncipollo/release-action@v1.14.0
         with:
           artifacts: out/*
+          tag: ${{ github.run_number }}
+          name: Tutoriels
           makeLatest: true
