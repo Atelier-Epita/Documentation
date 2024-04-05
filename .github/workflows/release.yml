@@ -2,7 +2,7 @@ name: Markdown to PDF and Release
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build-tutoriels:
