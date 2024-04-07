@@ -83,6 +83,12 @@ Actuellement, la CNC n'est pas équipée d'un aspirateur. Il est donc important 
 
 En cas de doute, ne lancez pas l'usinage et demandez de l'aide.
 
+### Mouvements manuels
+
+Pour effectuer des mouvements manuels, vous pouvez utiliser les flèches de Candle. Attention, si les fleches ne repondent pas, il est possible que vous ayez atteint un endstop ou que vous sortiez d'un arret d'urgence (`status: Alarm`). Pour regagner le controle, cliquez sur le bouton `Unlock`.
+
+![Candle](resources/cnc-candle.png)
+
 ### Tips - Homing
 
 Pour effectuer un `homing` de l'axe Z, renseigner le GCODE suivant dans les paramètres de Candle à l'emplacement `Control -> Probe commands`:
@@ -96,4 +102,4 @@ Cette opération est importante pour que la CNC sache où se trouve la surface d
 
 ### Lancement de l'usinage
 
-Pour lancer l'usinage, il vous suffit de charger le G-Code dans Candle (`File -> Open`), et de cliquer sur `Start`. **Merci de respecter les consignes de sécurité ci-dessus**.
+Pour lancer l'usinage, il vous suffit de charger le G-Code dans Candle (`File -> Open`), et de cliquer sur `Start`. Assurez vous de bien être en `status: Idle` avant de demarrer le job. **Merci de respecter les consignes de sécurité ci-dessus**.
