@@ -39,3 +39,6 @@ The cluster is running [metalLB](https://metallb.universe.tf/) to get load
 balancer services.
 
 MetalLB has been deployed using helm in the `metallb-system` namespace.
+
+An ip address pool has been deployed in the `metallb-system` namespace with
+the name `default`, and the ip range `10.69.17.200-10.69.17.254`.
