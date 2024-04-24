@@ -42,3 +42,7 @@ MetalLB has been deployed using helm in the `metallb-system` namespace.
 
 An ip address pool has been deployed in the `metallb-system` namespace with
 the name `default`, and the ip range `10.69.17.200-10.69.17.254`.
+
+*Warning: In order to have the ip range working, all the traffic from
+the range is redirected to the `master-1` node using `policy-based-forwarding`
+on the palo alto router.*
