@@ -38,4 +38,4 @@ and on the [calico documentation](https://docs.tigera.io/calico/latest/about/)
 The cluster is running [metalLB](https://metallb.universe.tf/) to get load
 balancer services.
 
-MetalLB has been deployed using helm.
+MetalLB has been deployed using helm in the `metallb-system` namespace.
