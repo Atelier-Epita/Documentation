@@ -3,6 +3,9 @@ name: Markdown to PDF and Release
 on:
   push:
     branches: [master]
+    paths:
+      - 'tutoriels/**'
+      - '.build/**'
 
 jobs:
   build-tutoriels:
