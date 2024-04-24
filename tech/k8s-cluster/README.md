@@ -46,3 +46,7 @@ the name `default`, and the ip range `10.69.17.200-10.69.17.254`.
 *Warning: In order to have the ip range working, all the traffic from
 the range is redirected to the `master-1` node using `policy-based-forwarding`
 on the palo alto router.*
+
+*Warning: Right now, a static ip route has been added on the router network.
+A solution allowing route rewriting within same interface should be
+investigated on the firewall.*
