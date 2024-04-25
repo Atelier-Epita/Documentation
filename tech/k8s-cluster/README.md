@@ -50,3 +50,15 @@ on the palo alto router.*
 *Warning: Right now, a static ip route has been added on the router network.
 A solution allowing route rewriting within same interface should be
 investigated on the firewall.*
+
+### Ingress controller
+
+The ingress controller installed is
+[traefik](https://platform9.com/learn/v1.0/tutorials/traefik-ingress)
+in the namespace `traefik`.
+
+### Cert manager
+
+Cert manager is install to manage tls certificates using helm.
+`ClusterIssuer` configurations can be found at `/root/cert-manager`
+on `master-1`.
