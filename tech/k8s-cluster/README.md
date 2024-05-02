@@ -92,4 +92,4 @@ software may come and go*
 
 A vault is deploy on the cluster under the namespace
 `vaultwarden` using values from `/root/vaultwarden`
-folder on `master-1` and [this](https://github.com/guerzon/vaultwarden).
+folder on `master-1` and [this](https://github.com/guerzon/vaultwarden) chart.
