@@ -2,9 +2,11 @@
 
 ## Hardware setup
 
+### Nodes
+
 We now have a working k8s cluster running currently:
 - 1 master
-- 1 worker node
+- 2 worker node
 
 The whole cluster should be using the ip range
 `10.69.17.0/24`
@@ -23,6 +25,12 @@ and so on.
 
 The apiserver can be reached at the provided dns above.
 
+### Storage
+
+A storage machine has been added to the cluster running an NFS
+server. This machine is currently used to provide `PersistentVolume`s
+on the cluster.
+
 ## Installed software
 
 ### CNI software 
@@ -32,6 +40,10 @@ manually deployed using the config file at `/root/calico.yaml` on
 `master-1`.
 You can read more about it [here](https://www.golinuxcloud.com/calico-kubernetes/)
 and on the [calico documentation](https://docs.tigera.io/calico/latest/about/)
+
+*Beware: calico ip pool had to be configured using vxlan since
+the cluster is multi node and the ip of the pods are only registered
+on each node. You can read more about it [here](https://docs.tigera.io/calico/latest/networking/configuring/vxlan-ipip)*
 
 ### Load Balancing
 
@@ -62,3 +74,22 @@ in the namespace `traefik`.
 Cert manager is install to manage tls certificates using helm.
 `ClusterIssuer` configurations can be found at `/root/cert-manager`
 on `master-1`.
+
+### Database
+
+A postgresql database has been manually deployed
+one the cluster in the namespace `database`.
+
+It should be used for every project to avoid duplicating databases.
+
+## Other software
+
+*This section is referencing the non-required software
+installed on the cluster. It may not be up to date as this
+software may come and go*
+
+### Vaultwarden
+
+A vault is deploy on the cluster under the namespace
+`vaultwarden` using values from `/root/vaultwarden`
+folder on `master-1` and [this](https://github.com/guerzon/vaultwarden).

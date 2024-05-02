@@ -8,7 +8,7 @@ sur le vault.
 Toute la configuration reseaux doit idealement passer
 par ce router.
 
-## Machines
+## Worker Nodes
 
 Pour l'instant, 4 noeuds sont configurées:
 - cpt-03
@@ -30,6 +30,12 @@ Les serveurs ne fonctionnant pas en UEFI,
 une version de debian 12 avec un grub BIOS est installé
 sur les machines, avec proxmox par dessus.
 (voir [documentation](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_12_Bookworm))
+
+## Storage Nodes
+
+Un noeud de storage est egalement configure appele
+`cpt-storage`. Ce noeud est utilise pour fournir du stockage reseau
+au machines physiques et aux VMS.
 
 ## Proxmox
 
@@ -54,12 +60,3 @@ un kernel module en plus pour activer la fonctionnalite
 
 Pour l'instant, un router est configuré sur une VM avec wireguard dessus
 qui permet de forward et de recevoir le trafic depuis la [vm AWS](gateway.infra.atelier-maker.fr).
-
-### Issues
-
-Pour l'instant, pour que la connection entre le router dans la baie et l'instance
-AWS soit correctement maintenue, un *cronjob* avec un *ping* du router
-vers l'instance tourne toutes les minutes.
-
-**Il ne faut pas desactiver ce cronjob avant d'avoir trouvé une vraie solution
-viable.**
