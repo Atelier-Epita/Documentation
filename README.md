@@ -2,6 +2,7 @@
 
 1. [Tech](tech)
    1. [Servers](tech/servers)
+   1. [K8S](tech/k8s-cluster)
 2. [Tutoriels](tutoriels)
    1. [Impression 3d](tutoriels/impression_3d_fdm.md)
    2. [CNC](tutoriels/cnc.md)
