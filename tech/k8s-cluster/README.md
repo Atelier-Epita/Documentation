@@ -65,9 +65,44 @@ investigated on the firewall.*
 
 ### Ingress controller
 
-The ingress controller installed is
-[traefik](https://platform9.com/learn/v1.0/tutorials/traefik-ingress)
+Two ingress controllers are installed.
+It is twice [traefik](https://platform9.com/learn/v1.0/tutorials/traefik-ingress)
 in the namespace `traefik`.
+
+The helm registry used is (https://helm.traefik.io/traefik) and the chart
+is `traefik`.
+
+#### Public traefik
+
+The first instance is deployed using the following command
+```
+helm upgrade -n traefik \
+    --create-namespace \
+    --install traefik \
+    --set dashboard.enabled=true \
+    --set rbac.enabled=true \
+    --set="additionalArguments={--api=true,--log.level=DEBUG,--serversTransport.insecureSkipVerify=true,--providers.kubernetescrd.allowexternalnameservices=true,,--providers.kubernetesingress.ingressclass=traefik}" \
+    traefik/traefik
+```
+
+The name of the release is `traefik` and the `ingressClassName` is
+`traefik`.
+
+#### Private traefik
+
+The first instance is deployed using the following command
+```
+helm upgrade -n traefik \
+    --create-namespace \
+    --install traefik-internal \
+    --set dashboard.enabled=true \
+    --set rbac.enabled=true \
+    --set="additionalArguments={--api=true,--log.level=INFO,--serversTransport.insecureSkipVerify=true,--providers.kubernetescrd.allowexternalnameservices=true,,--providers.kubernetesingress.ingressclass=traefik-internal}" \
+    traefik/traefik
+```
+
+The name of the release is `traefik-internal` and the `ingressClassName` is
+`traefik-internal`.
 
 ### Cert manager
 
