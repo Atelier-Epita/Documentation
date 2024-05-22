@@ -128,3 +128,8 @@ software may come and go*
 A vault is deploy on the cluster under the namespace
 `vaultwarden` using values from `/root/vaultwarden`
 folder on `master-1` and [this](https://github.com/guerzon/vaultwarden) chart.
+
+### Github Runners
+
+Github runners have been deployed in the `github-runners` namespace
+following [this](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/quickstart-for-actions-runner-controller) tutorial.
