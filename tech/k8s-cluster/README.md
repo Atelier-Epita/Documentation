@@ -25,6 +25,24 @@ and so on.
 
 The apiserver can be reached at the provided dns above.
 
+### Authentication
+
+The cluster can be accessed via OIDC with the help of a k8s plugin
+named kubelogin. For further information, please read about it [here](https://github.com/int128/kubelogin?tab=readme-ov-file#kubelogin--).
+For configuring the the api-server you can read the docs [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server)
+
+After installing the binary you can setup it using the following command:
+```
+kubectl oidc-login setup \
+      --oidc-issuer-url=https://accounts.google.com \
+      --oidc-client-id=<client-id> \
+      --oidc-client-secret=<client-secret> \
+      --oidc-extra-scope="openid,email,profile"
+```
+
+Once the cluster is being reached for the first time with this method,
+it will create a new user named as OIDC:email.
+
 ### Storage
 
 A storage machine has been added to the cluster running an NFS
