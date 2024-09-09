@@ -19,6 +19,8 @@ Terraform in itself can do way more and you can read about it [here](https://dev
 
 ## Usage
 
+[Terraform repo](https://github.com/Atelier-Epita/infrastructure/tree/main/terraform/google)
+
 We are using GoogleWorkspace's official provider so every informations
 can be found in it's [documentation](https://registry.terraform.io/providers/hashicorp/googleworkspace/latest/docs).
 
