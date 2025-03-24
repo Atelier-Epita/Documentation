@@ -6,6 +6,7 @@
 2. [Tutoriels](tutoriels)
    1. [Impression 3d](tutoriels/impression_3d_fdm.md)
    2. [CNC](tutoriels/cnc.md)
+   3. [Atelier Tinkercad](tutoriels/tinkercad.md)
 3. [Fiches Machines](fiches-machines)
    1. [decapeur thermique](fiches-machines/decapeur_thermique.md)
    2. [defonceuse](fiches-machines/defonceuse.md)
